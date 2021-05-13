@@ -1,0 +1,29 @@
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|. AbstractList
+Collection <|-- AbstractCollection
+
+Collection *- List
+AbstractCollection o- AbstractList
+AbstractList <-- ArrayList
+TimeUnit "1"-->"n" AbstractList:"aaa"
+AbstractList "1"-->"N" AbstractList
+
+class ArrayList {
+Object[] elementData
+size():List
+add(item:Person):Result
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+@enduml
